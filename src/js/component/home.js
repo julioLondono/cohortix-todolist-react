@@ -75,7 +75,11 @@ export class Home extends React.Component {
 						/>
 					</div>
 				</form>
-				<ul id="myUL">{mappedItems}</ul>
+				<div className="todosTable">
+					<ol id="myUL" className="tabla">
+						{mappedItems}
+					</ol>
+				</div>
 				<br />
 				<h3>Tasks Quantity= {this.state.todos.length}</h3>
 				<button
