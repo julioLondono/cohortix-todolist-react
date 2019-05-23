@@ -8,11 +8,14 @@ export const ToDoLine = props => {
 			<button className="btn" onClick={props.delete}>
 				X
 			</button>
+			<button className={props.upBtn} onClick={props.move} />
 		</li>
 	);
 };
 
 ToDoLine.propTypes = {
 	toDo: PropTypes.string,
-	delete: PropTypes.func
+	delete: PropTypes.func,
+	upBtn: PropTypes.string,
+	move: PropTypes.func
 };

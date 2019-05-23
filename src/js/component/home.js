@@ -33,13 +33,25 @@ export class Home extends React.Component {
 		this.setState(tempState);
 	};
 
+	moveUp = index => {
+		const splicedArray = this.state.todos.splice(index, 1);
+		// console.log("todos=" + this.state.todos);
+		// console.log("Spliced Array=" + splicedArray);
+		let orderedArray = this.state.todos.splice(index - 1, 0, splicedArray);
+		this.setState(orderedArray);
+	};
+
 	render() {
 		const mappedItems = this.state.todos.map((item, index) => {
+			let firstLine = index === 0 ? "hideBtn" : "fas fa-angle-up";
+
 			return (
 				<ToDoLine
 					key={index}
 					toDo={item}
 					delete={() => this.deleteLine(index)}
+					upBtn={firstLine}
+					move={() => this.moveUp(index)}
 				/>
 			);
 		});
