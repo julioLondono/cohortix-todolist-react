@@ -81,7 +81,7 @@ export class Home extends React.Component {
 					</ol>
 				</div>
 				<br />
-				<h3>Tasks Quantity= {this.state.todos.length}</h3>
+				<p>Tasks Quantity= {this.state.todos.length}</p>
 				<button
 					onClick={event => {
 						this.setState({
